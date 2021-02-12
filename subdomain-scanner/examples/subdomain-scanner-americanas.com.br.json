@@ -1,0 +1,132 @@
+{
+    "timestamp": "2020-10-01T13:53:14.778454",
+    "scan-results": {
+        "portal.americanas.com.br": [
+            "200.205.144.23"
+        ],
+        "ns1.americanas.com.br": [
+            "200.196.66.19"
+        ],
+        "mail.americanas.com.br": [
+            "200.186.156.3"
+        ],
+        "americanas.com.br": [
+            "34.193.228.72",
+            "34.226.118.12",
+            "52.86.103.53"
+        ],
+        "app.americanas.com.br": [
+            "104.97.72.219"
+        ],
+        "www.americanas.com.br": [
+            "200.187.83.137"
+        ],
+        "api.americanas.com.br": [
+            "23.62.40.86"
+        ],
+        "mx1.americanas.com.br": [
+            "200.189.215.87"
+        ],
+        "mx2.americanas.com.br": [
+            "200.189.215.88"
+        ],
+        "apps.americanas.com.br": [
+            "72.246.216.214",
+            "72.246.216.206"
+        ],
+        "images.americanas.com.br": [
+            "72.246.216.206",
+            "72.246.216.214"
+        ],
+        "autodiscover.americanas.com.br": [
+            "52.97.67.216",
+            "52.97.71.56",
+            "52.97.67.72",
+            "52.97.0.232"
+        ],
+        "img.americanas.com.br": [
+            "23.62.40.86"
+        ],
+        "mx3.americanas.com.br": [
+            "200.189.215.36"
+        ],
+        "sip.americanas.com.br": [
+            "52.112.64.140"
+        ],
+        "mailserver.americanas.com.br": [
+            "200.225.86.35"
+        ],
+        "mx01.americanas.com.br": [
+            "200.189.215.209"
+        ],
+        "mx4.americanas.com.br": [
+            "200.189.215.132"
+        ],
+        "origin.americanas.com.br": [
+            "200.189.215.37"
+        ],
+        "fb.americanas.com.br": [
+            "200.189.215.253"
+        ],
+        "analytics.americanas.com.br": [
+            "172.217.29.243"
+        ],
+        "sftp.americanas.com.br": [
+            "189.89.100.184"
+        ],
+        "lyncdiscover.americanas.com.br": [
+            "52.112.64.143"
+        ],
+        "smtp01.americanas.com.br": [
+            "200.189.215.220"
+        ],
+        "faq.americanas.com.br": [
+            "72.246.216.214",
+            "72.246.216.206"
+        ],
+        "smtp02.americanas.com.br": [
+            "200.194.215.54"
+        ],
+        "www6.americanas.com.br": [
+            "72.246.216.220",
+            "72.246.216.34"
+        ],
+        "reviews.americanas.com.br": [
+            "13.227.102.45",
+            "13.227.102.126",
+            "13.227.102.117",
+            "13.227.102.12"
+        ],
+        "nova.americanas.com.br": [
+            "72.246.216.206",
+            "72.246.216.214"
+        ],
+        "tim.americanas.com.br": [
+            "200.186.156.4"
+        ],
+        "imgs.americanas.com.br": [
+            "104.97.72.219"
+        ],
+        "listas.americanas.com.br": [
+            "23.62.40.86"
+        ],
+        "vr.americanas.com.br": [
+            "200.189.215.37"
+        ],
+        "mkt.americanas.com.br": [
+            "200.225.86.37"
+        ],
+        "catalogo.americanas.com.br": [
+            "104.97.72.219"
+        ],
+        "statics.americanas.com.br": [
+            "13.227.102.113",
+            "13.227.102.28",
+            "13.227.102.26",
+            "13.227.102.109"
+        ],
+        "enterpriseenrollment.americanas.com.br": [
+            "13.82.96.212"
+        ]
+    }
+}

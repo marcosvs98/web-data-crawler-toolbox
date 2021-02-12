@@ -1,0 +1,107 @@
+{
+    "timestamp": "2020-10-01T13:56:17.094477",
+    "scan-results": {
+        "www.pontofrio.com.br": [
+            "23.10.60.98"
+        ],
+        "m.pontofrio.com.br": [
+            "23.10.60.98"
+        ],
+        "pontofrio.com.br": [
+            "23.10.60.98"
+        ],
+        "mail.pontofrio.com.br": [
+            "131.100.119.69"
+        ],
+        "email.pontofrio.com.br": [
+            "177.126.185.20"
+        ],
+        "ftp.pontofrio.com.br": [
+            "177.126.185.59"
+        ],
+        "www2.pontofrio.com.br": [
+            "177.126.185.54"
+        ],
+        "api.pontofrio.com.br": [
+            "23.10.60.98"
+        ],
+        "news.pontofrio.com.br": [
+            "127.0.0.1"
+        ],
+        "autodiscover.pontofrio.com.br": [
+            "52.97.71.184",
+            "52.97.67.88",
+            "52.97.64.200",
+            "52.97.67.216"
+        ],
+        "img.pontofrio.com.br": [
+            "184.28.207.4"
+        ],
+        "sip.pontofrio.com.br": [
+            "52.112.67.139"
+        ],
+        "www3.pontofrio.com.br": [
+            "200.219.202.66"
+        ],
+        "chat.pontofrio.com.br": [
+            "177.126.185.89"
+        ],
+        "e.pontofrio.com.br": [
+            "186.202.41.26"
+        ],
+        "wap.pontofrio.com.br": [
+            "200.189.192.69"
+        ],
+        "mailer.pontofrio.com.br": [
+            "189.89.195.82"
+        ],
+        "b2b.pontofrio.com.br": [
+            "177.126.185.18"
+        ],
+        "lyncdiscover.pontofrio.com.br": [
+            "52.112.66.142"
+        ],
+        "www6.pontofrio.com.br": [
+            "189.89.195.16"
+        ],
+        "m3.pontofrio.com.br": [
+            "13.227.108.19",
+            "13.227.108.46",
+            "13.227.108.102",
+            "13.227.108.47"
+        ],
+        "allin.pontofrio.com.br": [
+            "187.45.233.232"
+        ],
+        "origin-www.pontofrio.com.br": [
+            "177.126.185.14"
+        ],
+        "premium.pontofrio.com.br": [
+            "54.94.148.187"
+        ],
+        "price.pontofrio.com.br": [
+            "23.4.205.52"
+        ],
+        "aviso.pontofrio.com.br": [
+            "81.92.116.9"
+        ],
+        "rec.pontofrio.com.br": [
+            "23.4.205.52"
+        ],
+        "listas.pontofrio.com.br": [
+            "23.4.205.52"
+        ],
+        "mkt.pontofrio.com.br": [
+            "177.126.185.178"
+        ],
+        "teste.pontofrio.com.br": [
+            "2.2.2.2"
+        ],
+        "catalogo.pontofrio.com.br": [
+            "23.4.205.52"
+        ],
+        "enterpriseenrollment.pontofrio.com.br": [
+            "104.40.82.191"
+        ]
+    }
+}
