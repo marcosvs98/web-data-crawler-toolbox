@@ -65,8 +65,8 @@ class DNSGlobalScanner(ThreadPool):
 
     def nameservers(self):
         try:
-            resp = requests.get('https://public-dns.info/nameservers.csv')
-        except requests.Error:
+            resp = requests.get('https://public-dns.info/nameservers.csv', timeout=30)
+        except (requests.RequestException, requests.exceptions.RequestException):
             return []
         for record in csv.DictReader(io.StringIO(resp.text)):
             record = {
@@ -83,7 +83,7 @@ class DNSGlobalScanner(ThreadPool):
             if nameserver:
                 r.nameservers = [nameserver]
             return [str(hostname).strip('.') for hostname in r.resolve_address(ip)]
-        except dns.exception.DNSException:
+        except (dns.exception.DNSException, AttributeError):
             return []
 
     def dns_resolve(self, hostname, nameserver=None):
@@ -91,7 +91,7 @@ class DNSGlobalScanner(ThreadPool):
             r = dns.resolver.Resolver()
             if nameserver:
                 r.nameservers = [nameserver]
-            return {str(ip): self.dns_lookup(str(ip), nameserver) for ip in r.query(hostname)}
+            return {str(ip): self.dns_lookup(str(ip), nameserver) for ip in r.resolve(hostname)}
         except dns.exception.DNSException:
             return {}
 

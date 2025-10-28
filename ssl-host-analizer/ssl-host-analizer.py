@@ -6,6 +6,9 @@ from abc import ABC, abstractmethod
 from queue import Queue
 from threading import Lock, Thread
 
+logging.basicConfig(
+    level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 logger = logging.getLogger(__name__)
 
 OPENSSLv11_EXECUTABLE_PATH = '/usr/bin/openssl11'
@@ -52,12 +55,16 @@ class HostSSLAnalyzer(ThreadPool):
     def openssl_load_available_ciphers(self):
         for name, proto in OPENSSLv11_SUPPORTED_PROTOCOLS.items():
             cmd = [OPENSSLv11_EXECUTABLE_PATH, 'ciphers', f'-{proto}', 'ALL:eNULL']
-            process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            output, _ = process.communicate()
-            if process.wait():
+            try:
+                process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                output, _ = process.communicate(timeout=5)
+                if process.returncode != 0:
+                    continue
+                output = output.decode().strip()
+                self.ciphers[name] = output.split(':')
+            except (subprocess.TimeoutExpired, subprocess.SubprocessError) as e:
+                logger.debug(f'Error loading ciphers for {name}: {e}')
                 continue
-            output = output.decode().strip()
-            self.ciphers[name] = output.split(':')
 
     def openssl_analyze_cipher(self, proto, cipher):
         cmd = [
@@ -69,17 +76,21 @@ class HostSSLAnalyzer(ThreadPool):
             cipher,
             f'-{OPENSSLv11_SUPPORTED_PROTOCOLS[proto]}',
         ]
-        process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        output, _ = process.communicate()
-        if process.wait():
-            print(f'[{proto}:{cipher}] FAILED!')
-            return
-        with self.lock:
-            try:
+        try:
+            process = subprocess.Popen(
+                cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=10
+            )
+            output, _ = process.communicate(timeout=10)
+            if process.returncode != 0:
+                logger.debug(f'[{proto}:{cipher}] FAILED!')
+                return
+            with self.lock:
+                if proto not in self.report:
+                    self.report[proto] = []
                 self.report[proto].append(cipher)
-            except KeyError:
-                self.report[proto] = [cipher]
-        print(f'[{proto}:{cipher}] OK!')
+            logger.debug(f'[{proto}:{cipher}] OK!')
+        except (subprocess.TimeoutExpired, subprocess.SubprocessError) as e:
+            logger.debug(f'[{proto}:{cipher}] ERROR: {e}')
 
     def handler(self, task):
         proto, cipher = task

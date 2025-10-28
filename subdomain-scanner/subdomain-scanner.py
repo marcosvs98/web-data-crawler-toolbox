@@ -59,7 +59,7 @@ class DomainScanner(ThreadPool):
             r = dns.resolver.Resolver()
             if nameserver:
                 r.nameservers = [nameserver]
-            return [str(ip) for ip in r.query(hostname)]
+            return [str(ip) for ip in r.resolve(hostname)]
         except dns.exception.DNSException:
             return []
 
